@@ -1,0 +1,5 @@
+#!/bin/bash
+
+FILE=$1
+shift
+yasm -i include -felf $FILE -o temp.o && gcc temp.o -o temp -m32 && rm temp.o && ./temp $@ && rm temp
